@@ -3,13 +3,13 @@ go:
 - 1.5.1
 install: make
 before_install:
-- rm -rf dist/matter-push-proxy
+- rm -rf dist/zbox-push-proxy
 deploy:
   provider: releases
   api_key:
-    secure: rVUxDwoJhMM6u73HyOliZi/mAs6vlTYK3P10a9HGj1VrCfDn7XYNRqLgCrstsZLfvx4GgmLR09K/TGDUflRktwPkLxZ4ZqnY+ErcDddAt3Rs1Um3zxNwfJHfOQqJjkru/3jcVBriYDUBBzdwh4e5RiiIo1PGt905JAwzgU7Nxaw873IAwEqPZSdGzjuXbMc7pF6W1974cpqWhyS/deBQ5RaRsaSjUYf8IQEUNkyBWZ4hflvxE2uKF4o89Lq4eLwGGl/JLZGXHyNF0NVk+vJZkO7G6ICzh6+m0CfCW7F/T7Djyr2GazAjWdMsy4xJ8O0bcipafK49lftP3rKz5/un5OilqOrsSjlYgB3mjMsKaZtwOuojCBNFMd+Fn/5i6OmINz70Ddeb5mJW+OeV6t/BoVUx6EsauR9N9dUynLnktr0Ym95vC/bIO6n1PPO4ML/EAtAZa6WWctQhgMYOg/QhnbUhoL4n9PkDSblKN1dFT2kY5Z/MQKUCZrlEpAbmZiUB0EhDGpQL1zTb5k58DWkeV5W9KfFkNxT5h32vLlMjPyyxxN7p1lyHZ+5KqpX7uOjW15Tu+D9PNCID0rzRDqt/rbwLWVcnudi7ZRdsYy+Lo0YwdN87WqwnWySB1Y4M8pLGicPJ8x9gU+8Rq226I8CIhvCD8RoVksmhhv6O7NQp3ac=
-  file: dist/matter-push-proxy.tar.gz
-  skip_cleanup: true
+    secure: cHATjGLSj7k+AvkBPgn1zB6a4XgtDMIT8KgL1m9MDEcRUgIX15iH2eylYh0dNOey6UHRJzJ2Ztv1yxdnVEyxKCI/U1tfBKwHlpJzyusAVQmcFnp+9caXZwfcV92qw2e9FFY5Ot42jMgWILEVsfx3ViG52lEBZL9dwSOcG52VkFDybsHboTRe+7+2s0ujqDIIF3GWvHLhZadoVArJcv/Y+m+jQdJLBNYk/icoh63j6SqK8d6T/QMkN6zFo32d3mzf3Pev4a97QAa34kz1lplVJPsz73lEq+4ozPKOOupEdNKlqq9Kzo5bzOCavCE7lgVvrSl3UQocEbNaHu9p7jgz92OwCJdwLYSCcRb9ExA2FDwWDE2XsvzA46ntWPSF230UQhUJw3gU3k1fIDBRD9PmjWFwUQC9q7tizIDuF0985V2VgTaQIDs3E35DZTykS60W6Dsn9Efy1+viqpU6qkgpRT8ASs8+azXhKTFUWnCqhlo8rjZM3mGr5rgazwF7r9ujryMm+LheePvEAB+3prPjg9macHnnK4/2XcwU7OkJG+szWvfj1Y8LSDzdyupPQyIgo7nwAotG2K67iO8xaj/MEIkIBXI4iVyE9rcOLGmWErR2GTCkxyDTCxDBcF/I8XDl58fO9TiX/bX4Ge1v7IpZZDLZ5VD/BpHFQYp4uQfG7T0=
+  file: dist/zbox-push-proxy.tar.gz
   on:
-    repo: mattermost/push-proxy
+    repo: ZBoxApp/push-proxy
+    branch: zbox
     tags: true

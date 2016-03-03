@@ -108,10 +108,20 @@ func sendAppleNotification(msg *PushNotification) {
 	payload := apns.NewPayload()
 	payload.Alert = msg.Message
 	payload.Badge = msg.Badge
+	payload.Sound = "default"
 
 	pn := apns.NewPushNotification()
 	pn.DeviceToken = msg.DeviceId
 	pn.AddPayload(payload)
+
+	if len(msg.ChannelId) > 0 {
+		pn.Set("channel_id", msg.ChannelId)
+	}
+
+	if len(msg.ChannelName) > 0 {
+		pn.Set("channel_name", msg.ChannelName)
+	}
+
 	client := apns.NewClient(CfgPP.ApplePushServer, CfgPP.ApplePushCertPublic, CfgPP.ApplePushCertPrivate)
 
 	LogInfo("Sending apple push notification")

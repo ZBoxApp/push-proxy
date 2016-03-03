@@ -19,7 +19,7 @@ else
 endif
 
 DIST_ROOT=dist
-DIST_PATH=$(DIST_ROOT)/matter-push-proxy
+DIST_PATH=$(DIST_ROOT)/zbox-push-proxy
 
 TESTS=.
 
@@ -43,14 +43,14 @@ build-server: | .prepare
 		exit 1; \
 	fi
 
-	$(GO) build $(GOFLAGS) ./...
-	$(GO) install $(GOFLAGS) ./...
+	@env GOOS=linux GOARCH=amd64 $(GO) build $(GOFLAGS) ./...
+	@env GOOS=linux GOARCH=amd64 $(GO) install $(GOFLAGS) ./...
 
 package:
 	@ echo Packaging push proxy
 
 	mkdir -p $(DIST_PATH)/bin
-	cp $(GOPATH)/bin/push-proxy $(DIST_PATH)/bin
+	cp $(GOPATH)/bin/linux_amd64/push-proxy $(DIST_PATH)/bin
 
 	cp -RL config $(DIST_PATH)/config
 	touch $(DIST_PATH)/config/build.txt
@@ -62,7 +62,7 @@ package:
 	cp NOTICE.txt $(DIST_PATH)
 	cp README.md $(DIST_PATH)
 
-	tar -C dist -czf $(DIST_PATH).tar.gz matter-push-proxy
+	tar -C dist -czf $(DIST_PATH).tar.gz zbox-push-proxy
 
 test:
 	$(GO) test $(GOFLAGS) -run=$(TESTS) -test.v -test.timeout=180s ./server || exit 1
