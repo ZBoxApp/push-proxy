@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/mattermost/push-proxy",
+	"ImportPath": "github.com/ZBoxApp/push-proxy",
 	"GoVersion": "go1.5",
 	"Deps": [
 		{
