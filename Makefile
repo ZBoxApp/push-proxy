@@ -43,14 +43,14 @@ build-server: | .prepare
 		exit 1; \
 	fi
 
-	@env GOOS=linux GOARCH=amd64 $(GO) build $(GOFLAGS) ./...
-	@env GOOS=linux GOARCH=amd64 $(GO) install $(GOFLAGS) ./...
+	$(GO) build $(GOFLAGS) ./...
+	$(GO) install $(GOFLAGS) ./...
 
 package:
 	@ echo Packaging push proxy
 
 	mkdir -p $(DIST_PATH)/bin
-	cp $(GOPATH)/bin/linux_amd64/push-proxy $(DIST_PATH)/bin
+	cp $(GOPATH)/bin/push-proxy $(DIST_PATH)/bin
 
 	cp -RL config $(DIST_PATH)/config
 	touch $(DIST_PATH)/config/build.txt
