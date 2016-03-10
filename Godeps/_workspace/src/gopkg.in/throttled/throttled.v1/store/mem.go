@@ -4,8 +4,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/mattermost/push-proxy/Godeps/_workspace/src/github.com/golang/groupcache/lru"
-	"github.com/mattermost/push-proxy/Godeps/_workspace/src/gopkg.in/throttled/throttled.v1"
+	"github.com/ZBoxApp/push-proxy/Godeps/_workspace/src/github.com/golang/groupcache/lru"
+	"github.com/ZBoxApp/push-proxy/Godeps/_workspace/src/gopkg.in/throttled/throttled.v1"
 )
 
 // memStore implements an in-memory Store.
