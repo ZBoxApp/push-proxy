@@ -14,6 +14,7 @@ import (
 	"github.com/anachronistic/apns"
 	"github.com/braintree/manners"
 	"github.com/gorilla/mux"
+	"github.com/kyokomi/emoji"
 	"gopkg.in/throttled/throttled.v1"
 	throttledStore "gopkg.in/throttled/throttled.v1/store"
 )
@@ -106,8 +107,9 @@ func sendAndroidNotification(msg *PushNotification) {
 
 func sendAppleNotification(msg *PushNotification) {
 	payload := apns.NewPayload()
-	payload.Alert = msg.Message
+	payload.Alert = emoji.Sprint(msg.Message)
 	payload.Badge = msg.Badge
+	payload.Category = msg.Category
 	payload.Sound = "default"
 
 	pn := apns.NewPushNotification()

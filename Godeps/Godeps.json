@@ -61,6 +61,11 @@
 			"ImportPath": "gopkg.in/throttled/throttled.v1",
 			"Comment": "v1.0.0",
 			"Rev": "74e328a1af88a9b54f9eca1397d74ad98572a6df"
+		},
+		{
+			"ImportPath": "gopkg.in/throttled/throttled.v1/store",
+			"Comment": "v1.0.0",
+			"Rev": "74e328a1af88a9b54f9eca1397d74ad98572a6df"
 		}
 	]
 }
